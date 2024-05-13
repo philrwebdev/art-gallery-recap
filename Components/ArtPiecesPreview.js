@@ -6,7 +6,7 @@ export default function ArtPiecesPreview({ image, dimensions, title, artist }) {
   return (
     <>
       <Image src={image} alt={title} height={height} width={width} />
-      <p class="imageSubtext">
+      <p className="imageSubtext">
         {title} | {artist}
       </p>
     </>
