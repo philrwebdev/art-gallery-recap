@@ -1,8 +1,8 @@
 import useSWR from "swr";
-import ArtPieces from "@/Components/ArtPieces";
+import styled from "styled-components";
 import Spotlight from "@/Components/Spotlight";
 
-export default function HomePage() {
+export default function SpotlightPage() {
   const {
     data: pieces,
     error,
@@ -19,15 +19,23 @@ export default function HomePage() {
 
   const randomPiece = getRandomPiece(pieces);
 
+  const StyledDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 2rem 0rem;
+  `;
+
   return (
-    <div>
-      <h1>Art Gallery</h1>
+    <StyledDiv>
+      <h1>Spotlight</h1>
       <Spotlight
         image={randomPiece.imageSource}
         artist={randomPiece.artist}
         dimensions={randomPiece.dimensions}
       />
-      <ArtPieces pieces={pieces} />
-    </div>
+      {/* <ArtPieces pieces={pieces} /> */}
+    </StyledDiv>
   );
 }
