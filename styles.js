@@ -29,4 +29,34 @@ export default createGlobalStyle`
     text-align: center;
     font-size: 3rem; 
   }
+
+
+.detailsUL {
+  display: flex;
+  flex-direction: column;
+  
+  
+  
+}
+
+.details{
+  margin: 5px;
+  display: flex;
+
+}
+
+.Back {
+  color: white;
+  border: solid black;
+  background-color: grey;
+  margin: 10px;
+  padding: 5px;
+   
+  
+}
+.art-piece-details{
+text-align: center;
+margin-top: 10px;
+}
+
 `;
