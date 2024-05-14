@@ -2,7 +2,7 @@ import useSWR from "swr";
 import styled from "styled-components";
 import Spotlight from "@/Components/Spotlight";
 
-export default function SpotlightPage({onToggleFavorite, artPiecesInfo}) {
+export default function SpotlightPage({ onToggleFavorite, artPiecesInfo }) {
   const {
     data: pieces,
     error,

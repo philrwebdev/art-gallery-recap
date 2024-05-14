@@ -1,5 +1,6 @@
 import ArtPieces from "@/Components/ArtPieces";
 import useSWR from "swr";
+import styled from "styled-components";
 
 export default function Favorites({ onToggleFavorite, artPiecesInfo }) {
   const favsSelected = artPiecesInfo === undefined ? false : true;
@@ -22,7 +23,7 @@ export default function Favorites({ onToggleFavorite, artPiecesInfo }) {
 
     return (
       <>
-        <h1>Favorites</h1>
+        <StyledH1>Favorites</StyledH1>
         <ArtPieces
           pieces={favoritePieces}
           onToggleFavorite={onToggleFavorite}
@@ -35,3 +36,7 @@ export default function Favorites({ onToggleFavorite, artPiecesInfo }) {
     return <h1>No favorites selected</h1>;
   }
 }
+
+const StyledH1 = styled.h1`
+  padding-left: 3%;
+`;

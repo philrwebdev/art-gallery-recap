@@ -12,7 +12,7 @@ export default function Navigation() {
     text-decoration: none;
     &:hover {
       text-decoration: underline;
-      background-color: lightyellow;
+      background-color: lightseagreen;
     }
     font-style: bold;
     color: black;
