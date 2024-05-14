@@ -34,9 +34,6 @@ export default createGlobalStyle`
 .detailsUL {
   display: flex;
   flex-direction: column;
-  
-  
-  
 }
 
 .details{
@@ -57,6 +54,11 @@ export default createGlobalStyle`
 .art-piece-details{
 text-align: center;
 margin-top: 10px;
+}
+
+.favItem {
+  display: block; 
+  margin: auto;
 }
 
 `;
