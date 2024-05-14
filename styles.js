@@ -62,8 +62,8 @@ margin-top: 10px;
 }
 
 
-.form{
-  text-align: center;
+.favItem:hover {
+  cursor: pointer;
 }
 
 
