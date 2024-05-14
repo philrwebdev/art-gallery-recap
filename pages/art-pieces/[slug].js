@@ -3,7 +3,13 @@ import ArtPieceDetails from "@/Components/ArtPieceDetails";
 import useSWR from "swr";
 import Link from "next/link";
 
-function ArtPieceDetailPage({onToggleFavorite, artPiecesInfo}) {
+import uselocalStorageState from "use-local-storage-state";
+
+function ArtPieceDetailPage({ onToggleFavorite, artPiecesInfo }) {
+  const [comment, setComment] = uselocalStorageState("comment", {
+    defaultValue: [],
+  });
+
   const router = useRouter();
   const { slug } = router.query;
 
@@ -19,6 +25,23 @@ function ArtPieceDetailPage({onToggleFavorite, artPiecesInfo}) {
 
   const onePiece = pieces.find((piece) => piece.slug === slug);
 
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    setComment({
+      ...comment,
+      [slug]: [...(comment[slug] || []), data.comment],
+    });
+
+    console.log(comment);
+    event.target.reset();
+    event.target.querySelector('input[name="comment"]').focus();
+
+    return;
+  }
+
   return (
     <>
       <ArtPieceDetails
@@ -32,7 +55,22 @@ function ArtPieceDetailPage({onToggleFavorite, artPiecesInfo}) {
         artPiecesInfo={artPiecesInfo}
         slug={slug}
       />
-      <Link class="Back" href="/art-pieces">Home</Link>
+      <Link className="Back" href="/art-pieces">
+        Home
+      </Link>
+      <br />
+      <hr />
+
+      <form className="form" onSubmit={handleSubmit}>
+        {comment[slug] &&
+          comment[slug].map((comment, index) => <p key={index}>{comment}</p>)}
+
+        <label htmlFor="comment">Schreibe einen kommentar:</label>
+        <br />
+
+        <input id="comment" name="comment" />
+        <button type="submit">Send</button>
+      </form>
     </>
   );
 }

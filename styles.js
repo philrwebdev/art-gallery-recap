@@ -61,4 +61,11 @@ margin-top: 10px;
   margin: auto;
 }
 
+
+.form{
+  text-align: center;
+}
+
+
 `;
+
