@@ -1,7 +1,7 @@
 import Layout from "@/Components/Layout";
 import GlobalStyle from "../styles";
 import { SWRConfig } from "swr";
-import { useState } from "react";
+import useLocalStorageState from "use-local-storage-state";
 
 async function fetcher(...args) {
   const response = await fetch(...args);
@@ -9,10 +9,8 @@ async function fetcher(...args) {
 }
 
 export default function App({ Component, pageProps }) {
-
-  const [artPiecesInfo, setArtPiecesInfo] = useState();
-
-  console.log("artPiecesInfo: ", artPiecesInfo);
+  const [artPiecesInfo, setArtPiecesInfo] =
+    useLocalStorageState("artPiecesInfo");
 
   function handleToggleFavorite(slug) {
     if (artPiecesInfo === undefined) {
@@ -41,9 +39,12 @@ export default function App({ Component, pageProps }) {
       <SWRConfig value={{ fetcher }}>
         <GlobalStyle />
 
-        <Component {...pageProps} onToggleFavorite={handleToggleFavorite} artPiecesInfo={artPiecesInfo}/>
+        <Component
+          {...pageProps}
+          onToggleFavorite={handleToggleFavorite}
+          artPiecesInfo={artPiecesInfo}
+        />
         <Layout />
-
       </SWRConfig>
     </>
   );

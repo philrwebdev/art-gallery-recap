@@ -61,4 +61,8 @@ margin-top: 10px;
   margin: auto;
 }
 
+.favItem:hover {
+  cursor: pointer;
+}
+
 `;
