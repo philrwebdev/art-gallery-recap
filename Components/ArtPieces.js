@@ -1,6 +1,7 @@
 import ArtPiecesPreview from "./ArtPiecesPreview";
 import Link from "next/link";
 import FavoriteButton from "./FavoriteButton";
+import styled from "styled-components";
 
 export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
   return (

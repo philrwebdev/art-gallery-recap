@@ -1,7 +1,8 @@
 import ArtPieces from "@/Components/ArtPieces";
+import styled from "styled-components";
 import useSWR from "swr";
 
-export default function ArtPiecesPage({onToggleFavorite, artPiecesInfo}) {
+export default function ArtPiecesPage({ onToggleFavorite, artPiecesInfo }) {
   const {
     data: pieces,
     error,
@@ -14,8 +15,17 @@ export default function ArtPiecesPage({onToggleFavorite, artPiecesInfo}) {
 
   return (
     <>
-      <h1>Pieces</h1>
-      <ArtPieces pieces={pieces} onToggleFavorite={onToggleFavorite} artPiecesInfo={artPiecesInfo}/>;
+      <StyledH1>Art Gallery</StyledH1>
+      <ArtPieces
+        pieces={pieces}
+        onToggleFavorite={onToggleFavorite}
+        artPiecesInfo={artPiecesInfo}
+      />
+      ;
     </>
   );
 }
+
+const StyledH1 = styled.h1`
+  padding-left: 3%;
+`;
