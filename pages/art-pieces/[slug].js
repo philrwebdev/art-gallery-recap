@@ -2,14 +2,9 @@ import { useRouter } from "next/router";
 import ArtPieceDetails from "@/Components/ArtPieceDetails";
 import useSWR from "swr";
 import Link from "next/link";
+import { Fragment } from "react";
 
-import uselocalStorageState from "use-local-storage-state";
-
-function ArtPieceDetailPage({ onToggleFavorite, artPiecesInfo }) {
-  const [comment, setComment] = uselocalStorageState("comment", {
-    defaultValue: [],
-  });
-
+function ArtPieceDetailPage({onToggleFavorite, artPiecesInfo}) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -54,23 +49,9 @@ function ArtPieceDetailPage({ onToggleFavorite, artPiecesInfo }) {
         onToggleFavorite={onToggleFavorite}
         artPiecesInfo={artPiecesInfo}
         slug={slug}
+        colors={onePiece.colors}
       />
-      <Link className="Back" href="/art-pieces">
-        Home
-      </Link>
-      <br />
-      <hr />
-
-      <form className="form" onSubmit={handleSubmit}>
-        {comment[slug] &&
-          comment[slug].map((comment, index) => <p key={index}>{comment}</p>)}
-
-        <label htmlFor="comment">Schreibe einen kommentar:</label>
-        <br />
-
-        <input id="comment" name="comment" />
-        <button type="submit">Send</button>
-      </form>
+      <Link class="Back" href="/art-pieces">Home</Link>
     </>
   );
 }
