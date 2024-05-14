@@ -29,6 +29,9 @@ export default createGlobalStyle`
     text-align: center;
     font-size: 3rem; 
   }
+  form {
+    text-align: center;
+  }
 
 
 .detailsUL {
@@ -65,7 +68,4 @@ margin-top: 10px;
 .favItem:hover {
   cursor: pointer;
 }
-
-
 `;
-

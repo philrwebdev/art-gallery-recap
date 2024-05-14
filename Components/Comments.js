@@ -1,13 +1,18 @@
 import React from "react";
+import styled from "styled-components";
 
 function Comments({ comments }) {
   return (
-    <div>
+    <StyledDiv>
       {comments.map((comment, index) => (
         <p key={index}>{comment}</p>
       ))}
-    </div>
+    </StyledDiv>
   );
 }
+
+const StyledDiv = styled.div`
+  text-align: center;
+`;
 
 export default Comments;

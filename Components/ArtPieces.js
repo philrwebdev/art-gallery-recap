@@ -9,7 +9,7 @@ export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
       {pieces.map((piece) => {
         return (
           <>
-            <Link href={`/art-pieces/${piece.slug}`} key={piece.slug}>
+            <StyledLink href={`/art-pieces/${piece.slug}`} key={piece.slug}>
               <li key={piece.slug}>
                 <ArtPiecesPreview
                   slug={piece.slug}
@@ -21,7 +21,7 @@ export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
                   // isFavorite={isFavorite}
                 />
               </li>
-            </Link>
+            </StyledLink>
             <FavoriteButton
               slug={piece.slug}
               onToggleFavorite={onToggleFavorite}
@@ -33,3 +33,9 @@ export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
     </ul>
   );
 }
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+
+  color: black;
+`;
