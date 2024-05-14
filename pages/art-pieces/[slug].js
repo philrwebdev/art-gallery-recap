@@ -2,8 +2,9 @@ import { useRouter } from "next/router";
 import ArtPieceDetails from "@/Components/ArtPieceDetails";
 import useSWR from "swr";
 import Link from "next/link";
+import { Fragment } from "react";
 
-function ArtPieceDetailPage({onToggleFavorite, artPiecesInfo}) {
+function ArtPieceDetailPage({ onToggleFavorite, artPiecesInfo }) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -31,8 +32,11 @@ function ArtPieceDetailPage({onToggleFavorite, artPiecesInfo}) {
         onToggleFavorite={onToggleFavorite}
         artPiecesInfo={artPiecesInfo}
         slug={slug}
+        colors={onePiece.colors}
       />
-      <Link class="Back" href="/art-pieces">Home</Link>
+      <Link class="Back" href="/art-pieces">
+        Home
+      </Link>
     </>
   );
 }
