@@ -45,7 +45,7 @@ function ArtPieceDetails({
       <FavoriteButton
         slug={slug}
         onToggleFavorite={onToggleFavorite}
-        // isFavorite={isFavorite}
+        artPiecesInfo={artPiecesInfo}
       />
     </div>
   );
