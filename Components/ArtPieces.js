@@ -36,6 +36,5 @@ export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-
   color: black;
 `;
