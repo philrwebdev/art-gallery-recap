@@ -30,8 +30,8 @@ importers:
         specifier: ^2.2.5
         version: 2.2.5(react@18.2.0)
       use-local-storage-state:
-        specifier: ^19.2.0
-        version: 19.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: ^17.3.0
+        version: 17.3.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@svgr/webpack':
         specifier: ^8.0.1
@@ -3109,12 +3109,12 @@ packages:
   url-parse@1.5.10:
     resolution: {integrity: sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==}
 
-  use-local-storage-state@19.2.0:
-    resolution: {integrity: sha512-z5+n406vi3FzPJW6+lzuL/LJr4VLhXsUq1TWWeHQABL37bnJ159dSUmO7XuwqvACX93ZA9P2vkB8GMDgq1rr7A==}
-    engines: {node: '>=14'}
+  use-local-storage-state@17.3.0:
+    resolution: {integrity: sha512-PZruqtmMkYCgcC5t+0Mbka1rN2jjhC1SMA2UD8o6HbpblZf8E9aaXF0sEwlQAWlBpKGlNYvbqueB8dlbwX7n/g==}
+    engines: {node: '>=12'}
     peerDependencies:
-      react: '>=18'
-      react-dom: '>=18'
+      react: '>=16.8.0 < 18'
+      react-dom: '>=16.8.0 < 18'
 
   use-sync-external-store@1.2.2:
     resolution: {integrity: sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==}
@@ -7024,7 +7024,7 @@ snapshots:
       querystringify: 2.2.0
       requires-port: 1.0.0
 
-  use-local-storage-state@19.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  use-local-storage-state@17.3.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
