@@ -55,10 +55,10 @@ function ArtPieceDetailPage({ onToggleFavorite, artPiecesInfo }) {
       </Link>
       <br />
       <hr />
-
+      <Comments comments={comment[slug] || []} />
       <CommentForm onSubmitComment={handleSubmitComment} />
 
-      <Comments comments={comment[slug] || []} />
+      
     </>
   );
 }
