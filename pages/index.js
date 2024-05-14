@@ -2,7 +2,7 @@ import useSWR from "swr";
 import styled from "styled-components";
 import Spotlight from "@/Components/Spotlight";
 
-export default function SpotlightPage() {
+export default function SpotlightPage({onToggleFavorite, artPiecesInfo}) {
   const {
     data: pieces,
     error,
@@ -34,8 +34,10 @@ export default function SpotlightPage() {
         image={randomPiece.imageSource}
         artist={randomPiece.artist}
         dimensions={randomPiece.dimensions}
+        slug={randomPiece.slug}
+        onToggleFavorite={onToggleFavorite}
+        artPiecesInfo={artPiecesInfo}
       />
-      {/* <ArtPieces pieces={pieces} /> */}
     </StyledDiv>
   );
 }

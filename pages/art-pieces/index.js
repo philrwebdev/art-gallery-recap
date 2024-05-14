@@ -1,7 +1,7 @@
 import ArtPieces from "@/Components/ArtPieces";
 import useSWR from "swr";
 
-export default function ArtPiecesPage({}) {
+export default function ArtPiecesPage({onToggleFavorite, artPiecesInfo}) {
   const {
     data: pieces,
     error,
@@ -15,7 +15,7 @@ export default function ArtPiecesPage({}) {
   return (
     <>
       <h1>Pieces</h1>
-      <ArtPieces pieces={pieces} />;
+      <ArtPieces pieces={pieces} onToggleFavorite={onToggleFavorite} artPiecesInfo={artPiecesInfo}/>;
     </>
   );
 }

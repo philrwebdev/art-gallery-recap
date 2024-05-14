@@ -3,7 +3,7 @@ import ArtPieceDetails from "@/Components/ArtPieceDetails";
 import useSWR from "swr";
 import Link from "next/link";
 
-function ArtPieceDetailPage() {
+function ArtPieceDetailPage({onToggleFavorite, artPiecesInfo}) {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -28,6 +28,9 @@ function ArtPieceDetailPage() {
         year={onePiece.year}
         genre={onePiece.genre}
         dimensions={onePiece.dimensions}
+        onToggleFavorite={onToggleFavorite}
+        artPiecesInfo={artPiecesInfo}
+        slug={slug}
       />
       <Link class="Back" href="/art-pieces">Home</Link>
     </>
