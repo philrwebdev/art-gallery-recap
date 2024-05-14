@@ -24,7 +24,7 @@ export default function ArtPieces({ pieces, onToggleFavorite, artPiecesInfo }) {
             <FavoriteButton
               slug={piece.slug}
               onToggleFavorite={onToggleFavorite}
-              // isFavorite={isFavorite}
+              artPiecesInfo={artPiecesInfo}
             />
           </>
         );
